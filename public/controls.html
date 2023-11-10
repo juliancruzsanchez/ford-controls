@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remote Control</title>
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/custom.css">
+    <script src="https://kit.fontawesome.com/f28faac7c6.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <script>
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+      const pin = urlParams.get('pin');
+      async function act(act) {
+        const response = await fetch(`http://localhost:3000/push/${pin}/${act}`);
+        const movies = await response.json();
+      }
+    </script>
+    <div id="app">
+        <header>
+          <img src="ford-logo.png" height="50" alt="Ford Logo">
+        </header>
+        <div class="car-name">Julian's Ford Focus 2016</div>
+        <div class="buttons">
+            <div onclick="act('lock')" class="button">
+              <span><i class="fa-solid fa-lock"></i></span>
+              <span>Lock</span>
+            </div>
+            <div onclick="act('unlock')" class="button">
+              <span><i class="fa-solid fa-lock-open"></i></span>
+              <span>Unlock</span>
+            </div>
+            <div onclick="act('trunk')" class="button">
+              <span><i class="fa-solid fa-car-side"></i></span>
+              <span>Trunk</span>
+            </div>
+            <div onclick="act('panic')" class="button panic">
+              <span><i class="fa-solid fa-triangle-exclamation"></i></span>
+              <span>Panic</span>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

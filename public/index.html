@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Ford Focus</title>
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/custom.css">
+    <link rel="stylesheet" href="./css/login.css">
+</head>
+<body>
+    <script>
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        if (urlParams.has('pin')) {
+            window.location.href = "/controls.html?pin=" + urlParams.get('pin')
+        }
+
+        function login() {
+            window.location.href = "/controls.html?pin=" + document.querySelector('input').value
+        }
+    </script>
+    <div id="app">
+        <header>
+          <img src="ford-logo.png" height="50" alt="Ford Logo">
+        </header>
+        <div class="login">
+            <input type="number" placeholder="PIN" autofocus min="1000" max="9999" pattern="[0-9]*">
+            <button onclick="login()">Login</button>
+        </div>
+    </div>
+</body>
+</html>
