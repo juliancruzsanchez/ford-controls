@@ -2,10 +2,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Remote Control</title>
+    <title>Ford Focus Remote</title>
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/custom.css">
     <script src="https://kit.fontawesome.com/f28faac7c6.js" crossorigin="anonymous"></script>
+    <meta name="apple-mobile-web-app-title" content="MyKey">
+    <link rel="apple-touch-icon" sizes="480x480" href="icons/icon.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta data-statusbar-color="" name="theme-color" content="#2a2a2a">
 </head>
 <body>
     <script>
@@ -21,25 +26,29 @@
         <header>
           <img src="ford-logo.png" height="50" alt="Ford Logo">
         </header>
+        <div class="content">
         <div class="car-name">Julian's Ford Focus 2016</div>
         <div class="buttons">
-            <div onclick="act('lock')" class="button">
-              <span><i class="fa-solid fa-lock"></i></span>
-              <span>Lock</span>
-            </div>
-            <div onclick="act('unlock')" class="button">
-              <span><i class="fa-solid fa-lock-open"></i></span>
-              <span>Unlock</span>
-            </div>
+          <div onclick="act('panic')" class="button panic">
+            <span><i class="fa-solid fa-triangle-exclamation"></i></span>
+            <span>Panic</span>
+          </div>
             <div onclick="act('trunk')" class="button">
               <span><i class="fa-solid fa-car-side"></i></span>
               <span>Trunk</span>
             </div>
-            <div onclick="act('panic')" class="button panic">
-              <span><i class="fa-solid fa-triangle-exclamation"></i></span>
-              <span>Panic</span>
+            <div onclick="act('unlock')" class="button">
+              <span><i class="fa-solid fa-lock-open"></i></span>
+              <span>Unlock</span>
+              </div>
+
+            <div onclick="act('lock')" class="button">
+              <span><i class="fa-solid fa-lock"></i></span>
+              <span>Lock</span>
             </div>
 
+            </div>
+        </div>
         </div>
     </div>
 </body>
