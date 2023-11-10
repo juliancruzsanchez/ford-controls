@@ -18,7 +18,7 @@
       const urlParams = new URLSearchParams(queryString);
       const pin = urlParams.get('pin');
       async function act(act) {
-        const response = await fetch(`http://localhost:3000/push/${pin}/${act}`);
+        const response = await fetch(`http://backend.chorechampion.com:8675/push/${pin}/${act}`);
         const movies = await response.json();
       }
     </script>
