@@ -48,6 +48,10 @@ header {
     color: #569fec;
 }
 
+.car-img img {
+  max-width: 100vw;
+}
+
 button,
 html [type="button"],
 [type="reset"],
