@@ -109,3 +109,11 @@ textarea {
   line-height: 1.15;
   margin: 0;
 }
+
+ .center-div {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}

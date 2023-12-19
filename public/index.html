@@ -1,4 +1,5 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -6,28 +7,36 @@
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/custom.css">
     <link rel="stylesheet" href="./css/login.css">
+    <script src="./js/login.js"></script>
 </head>
-<body>
-    <script>
-        const queryString = window.location.search;
-        const urlParams = new URLSearchParams(queryString);
-        if (urlParams.has('pin')) {
-            window.location.href = "/controls.html?pin=" + urlParams.get('pin')
-        }
 
-        function login() {
-            window.location.href = "/controls.html?pin=" + document.querySelector('input').value
-        }
-    </script>
+<body>
     <div id="app">
         <header>
-          <img src="ford-logo.png" height="50" alt="Ford Logo">
+            <img src="ford-logo.png" height="50" alt="Ford Logo">
         </header>
-        <div class="login">
-            <input type="number" placeholder="PIN" autofocus pattern="[0-9]*">
-            <br><br>
-            <button onclick="login()">Login</button>
+        <div class="login-wrapper center-div">
+            <div class="login">
+                <input type="number" placeholder="PIN" pattern="[0-9]*">
+                <div class="inputbox">
+                    <div onclick="addNumber(1)">1</div>
+                    <div onclick="addNumber(2)">2</div>
+                    <div onclick="addNumber(3)">3</div>
+                    <div onclick="addNumber(4)">4</div>
+                    <div onclick="addNumber(5)">5</div>
+                    <div onclick="addNumber(6)">6</div>
+                    <div onclick="addNumber(7)">7</div>
+                    <div onclick="addNumber(8)">8</div>
+                    <div onclick="addNumber(9)">9</div>
+                    <div class="hidden"></div>
+                    <div onclick="addNumber(0)">0</div>
+                    <div class="hidden"></div>
+                </div>
+                <br>
+                <button onclick="login()">Login</button>
+            </div>
         </div>
     </div>
 </body>
+
 </html>
